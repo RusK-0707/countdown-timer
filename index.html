@@ -27,118 +27,34 @@
 
     <!-- Google Fonts の追加（Orbitron フォント） -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS ファイルのリンク -->
+    <link rel="stylesheet" href="styles.css"> <!-- CSS ファイル -->
 
-    <!-- CSS の追加（背景の黒とクールなフォントの設定） -->
-    <style>
-        body {
-            background-color: #000; /* 背景色を黒に設定 */
-            color: #00f; /* 文字色を青に設定 */
-            font-family: 'Orbitron', sans-serif; /* Google Fonts の Orbitron フォントを使用 */
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            letter-spacing: 2px; /* 文字間隔を広げてクールな見た目に */
-        }
-
-        .countdown {
-            font-size: 36px;
-            background-color: rgba(255, 255, 255, 0.1); /* カウントダウンの背景を半透明に */
-            border-radius: 10px;
-            padding: 20px;
-            display: inline-block;
-        }
-
-        .controls {
-            margin-top: 20px;
-        }
-
-        .button {
-            padding: 10px 20px;
-            margin: 5px;
-            border: none;
-            background-color: #00f; /* ボタンの背景色を青に設定 */
-            color: #fff;
-            cursor: pointer;
-            border-radius: 5px;
-            font-family: 'Orbitron', sans-serif; /* ボタンのフォントも同じに */
-            transition: background-color 0.3s;
-        }
-
-        .button:hover {
-            background-color: #007bff; /* ホバーカラーを設定 */
-        }
-
-        /* 背景色と文字色の切り替えボタン */
-        .toggle-button {
-            background-color: #fff; /* ボタンの背景色を白に設定 */
-            color: #000; /* 文字色を黒に設定 */
-        }
-
-        /* 背景色が白の時の設定 */
-        .white-background {
-            background-color: #fff;
-            color: #000;
-        }
-
-        .white-background .button {
-            background-color: #007bff; /* ボタンの背景色を青に設定 */
-            color: #fff;
-        }
-
-        .white-background .toggle-button {
-            background-color: #000;
-            color: #fff;
-        }
-    </style>
-
-    <!-- JavaScript カウントダウンスクリプト -->
-    <script>
-        window.addEventListener('DOMContentLoaded', (event) => {
-            const countdownElement = document.getElementById('countdown');
-            const inputDate = new Date("2024-12-31T00:00:00"); // 任意のカウントダウン終了日時を設定
-            const toggleButton = document.getElementById('toggleBackground');
-            const bodyElement = document.body;
-
-            function updateCountdown() {
-                const now = new Date();
-                const timeDifference = inputDate - now;
-
-                if (timeDifference > 0) {
-                    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-                    countdownElement.textContent = `${days} 日 ${hours} 時間 ${minutes} 分 ${seconds} 秒`;
-                } else {
-                    countdownElement.textContent = "カウントダウン終了!";
-                }
-            }
-
-            setInterval(updateCountdown, 1000);
-
-            // 背景色と文字色の切り替えボタン
-            toggleButton.addEventListener('click', () => {
-                bodyElement.classList.toggle('white-background');
-            });
-        });
-    </script>
+    <!-- JavaScript ファイルのリンク -->
+    <script src="script.js" defer></script> <!-- JavaScript ファイル -->
 </head>
 <body>
     <!-- コンテンツの追加 -->
     <h1>カウントダウンタイマー</h1>
+    <label>
+        <input type="datetime-local" id="inputDate" /> <!-- 日時入力フィールド -->
+        <img src="calendar-icon.png" alt="カレンダー" id="calendarIcon" class="calendar-icon" /> <!-- カレンダーアイコン -->
+    </label>
+    <button id="startCountdown" class="button">カウントダウン開始</button>
     <div id="countdown" class="countdown">読み込み中...</div>
+    
     <div class="controls">
         <button class="button toggle-button" id="toggleBackground">背景色を切り替え</button>
+    </div>
+
+    <div class="color-picker">
+        <label>背景色を選択:
+            <input type="color" id="bgColor" value="#000000" />
+        </label>
+        <label>文字色を選択:
+            <input type="color" id="textColor" value="#00ff00" />
+        </label>
     </div>
 </body>
 </html>
