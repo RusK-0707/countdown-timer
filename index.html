@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カウントダウンタイマー</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>カウントダウンタイマー</h1>
+        
+        <!-- 日時の入力フィールド -->
+        <input type="datetime-local" id="date-input">
+        <button onclick="startCountdown()">カウントダウン開始</button>
+        
+        <!-- 背景色と文字色の選択フィールド -->
+        <div class="color-settings">
+            <label for="bg-color">背景色: </label>
+            <button onclick="setBackgroundColor('black')">黒</button>
+            <button onclick="setBackgroundColor('white')">白</button>
+            
+            <label for="text-color">文字色: </label>
+            <input type="color" id="text-color" value="#00FFFF">
+            <button onclick="applyTextColor()">文字色を適用</button>
+        </div>
+        
+        <div id="countdown">あと --日 --時間 --分 --秒</div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
