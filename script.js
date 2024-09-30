@@ -33,11 +33,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
-    // カレンダーアイコンをクリックで日時入力フィールドを開く
-    document.getElementById('calendarIcon').addEventListener('click', () => {
-        inputDateElement.focus(); // 入力フィールドにフォーカスを当てる
-    });
-
     // 色変更
     document.getElementById('bgColor').addEventListener('input', (event) => {
         bodyElement.style.backgroundColor = event.target.value; // 背景色を変更
