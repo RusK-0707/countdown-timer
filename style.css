@@ -45,15 +45,6 @@ h1 {
     background-color: #007bff; /* ホバーカラーを設定 */
 }
 
-/* カレンダーマークのスタイル */
-.calendar-icon {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    vertical-align: middle;
-    margin-left: 10px; /* 入力フィールドとの間にスペースを追加 */
-}
-
 /* 色変更のスタイル */
 .color-picker {
     margin: 20px;
