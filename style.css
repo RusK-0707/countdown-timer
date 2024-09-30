@@ -1,85 +1,60 @@
-﻿/* 全体の基本スタイル設定 */
 body {
+    background-color: #000; /* 初期背景色を黒に設定 */
+    color: #00f; /* 初期文字色を青に設定 */
+    font-family: 'Orbitron', sans-serif; /* Google Fonts の Orbitron フォントを使用 */
+    text-align: center;
     margin: 0;
     padding: 0;
-    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-color: #000000; /* 初期背景色を黒に設定 */
-    color: #00FFFF; /* 初期文字色を青に設定 */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* カッコいいフォントを使用 */
+    height: 100vh;
 }
 
-
-/* 中央に表示するコンテナのスタイル */
-.container {
-    text-align: center;
-    border: 2px solid #00FFFF;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0px 0px 15px #00FFFF;
-}
-
-
-/* タイトルのスタイル */
 h1 {
-    margin: 0;
-    padding-bottom: 20px;
-    font-size: 3em;
-    color: inherit; /* 親要素の文字色を継承 */
+    font-size: 48px;
+    margin-bottom: 20px;
+    letter-spacing: 2px; /* 文字間隔を広げてクールな見た目に */
 }
 
-
-/* 日時入力フィールドのスタイル */
-#date-input {
-    padding: 10px;
-    margin: 10px 0;
-    font-size: 1.2em;
-    border: 2px solid #00FFFF;
+.countdown {
+    font-size: 36px;
+    background-color: rgba(255, 255, 255, 0.1); /* カウントダウンの背景を半透明に */
     border-radius: 10px;
-    background: #000;
-    color: #00FFFF;
-    box-shadow: 0px 0px 10px #00FFFF;
+    padding: 20px;
+    display: inline-block;
 }
 
-
-/* ボタンのスタイル */
-button {
-    padding: 15px 30px;
-    margin: 10px;
-    font-size: 1.2em;
-    cursor: pointer;
-    border: none;
-    border-radius: 10px;
-    background-color: #00FFFF;
-    color: #000;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-
-button:hover {
-    background-color: #007777; /* ボタンホバー時に色を少し変える */
-}
-
-
-/* 色の設定部分のスタイル */
-.color-settings {
-    margin: 20px 0;
-}
-
-
-.color-settings label {
-    font-size: 1.2em;
-    margin: 0 10px;
-}
-
-
-/* カウントダウン表示部分のスタイル */
-#countdown {
-    font-size: 2em;
+.controls {
     margin-top: 20px;
-    border-top: 2px solid #00FFFF;
-    padding-top: 20px;
-    color: inherit; /* 親要素の文字色を継承 */
+}
+
+.button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #00f; /* ボタンの背景色を青に設定 */
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Orbitron', sans-serif; /* ボタンのフォントも同じに */
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #007bff; /* ホバーカラーを設定 */
+}
+
+/* カレンダーマークのスタイル */
+.calendar-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-left: 10px; /* 入力フィールドとの間にスペースを追加 */
+}
+
+/* 色変更のスタイル */
+.color-picker {
+    margin: 20px;
 }
